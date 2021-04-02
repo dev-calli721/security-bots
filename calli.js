@@ -49,7 +49,7 @@ const callienabled  = "<:emoji_32:798508498605965333>";
 const callidisabled = "<:emoji_31:798508482407039017>";
 const callifalse    = "<a:emoji_27:811585526913957894>";
 const callitrue     = "<a:emoji_26:809385634149826611>";
-const callicolor    = "#00000";
+const callicolor    = "BLUE";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
@@ -231,8 +231,10 @@ calli.on("message", message => {
           .setDescription(
             `
 🔒 A channel has been locked.
+
 Channel: <#${message.channel.id}>
 Moderator: <@${message.author.id}>
+
 **Reason**
 Not-Provided
           `
@@ -265,8 +267,10 @@ calli.on("message", message => {
           .setDescription(
             `
 🔒 A channel has been unloked.
+
 Channel: <#${message.channel.id}>
 Moderator: <@${message.author.id}>
+
 **Reason**
 Not-Provided
           
