@@ -37,13 +37,13 @@ const dateFormat = require("dateformat");
 var table = require("table").table;
 const Discord = require("discord.js");
 const cmd = require("node-cmd");
-const prefix = "!";
+const prefix = "s!";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
 const developers = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
-calli.login("ODI2NDIxMjY0NjQyMDgwODA5.YGMOxw.DH4ZarRcSYu2zJ7jOU-Wxa3f1II")
+calli.login("Nzk2ODY0NzU4NDYwNTc5ODgw.X_eIIw.PgbMOddd9Kg4uBmWMUTk3LB4Sis")
 ///////////////////////////////////////////////////////////////////////////////
 const callienabled  = "<:emoji_32:798508498605965333>";
 const callidisabled = "<:emoji_31:798508482407039017>";
@@ -51,7 +51,12 @@ const callifalse    = "<a:emoji_27:811585526913957894>";
 const callitrue     = "<a:emoji_26:809385634149826611>";
 const callicolor    = "#00000";
 ///////////////////////////////////////////////////////////////////////////////
-
+calli.on("ready", () => {
+  console.log(`${calli.user.tag}`);
+  calli.user.setActivity(`${prefix}help`, {
+    Type: "Playing"
+  });
+});
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", async message => {
   if (message.content.startsWith(prefix + "help")) {
