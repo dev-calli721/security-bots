@@ -469,16 +469,7 @@ If there is, you can always join the support server by type ${prefix}support. or
 calli.on("guildCreate", guild => {
   let embed = new Discord.MessageEmbed()
     .setColor(callicolor)
-    .setFooter('Thanks for adding security, I wish you luck!')
-    .setDescription(`
-**Hello From Security**
-My Prefix is [${prefix}]
-**About the bot**
-aprofessional moderation & security bot that can security your server
-**report a problem**
-If there is, you can always join the support server by type ${prefix}support. or DM a Developer. Developers you can message include Calli#8914
-**Extra Links**
-[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=2080392378&scope=bot) - [Website](https://security-bot4415.glitch.me/)`);
+    .setDescription(`Thanks for adding security, I wish you luck!`);
 
   guild.owner.send(embed);
 });
