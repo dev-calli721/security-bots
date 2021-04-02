@@ -1213,6 +1213,59 @@ banning Members
     });
   }
 });
+///////////////////////////////////////////////////////////////////////////////
+calli.on("message", message => {
+  if (message.content === prefix + "settings") {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
+    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+      return message.channel.send(
+        "**You must have a higher role use this command**"
+      );
+    let embed = new Discord.MessageEmbed()
+      .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }))
+      .setColor(callicolor)
+      .setDescription(`
+      
+      **Anti Ban**
+Enabled:${config[message.guild.id].banLimit} <:emoji_32:798508498605965333> 
+Warn at:${config[message.guild.id].banLimit} <:emoji_34:798508537718374401> 
+Punish at:${config[message.guild.id].banLimit} <:emoji_33:798508517421744168> 
+**Anti Kick**
+Enabled:${config[message.guild.id].kickLimits} <:emoji_32:798508498605965333> 
+Warn at: ${config[message.guild.id].kickLimits} <:emoji_34:798508537718374401> 
+Punish at: ${config[message.guild.id].kickLimits} <:emoji_33:798508517421744168> 
+**Anti Role-Create**
+Enabled: ${config[message.guild.id].roleCrLimits} <:emoji_32:798508498605965333> 
+Warn at: ${config[message.guild.id].roleCrLimits} <:emoji_34:798508537718374401> 
+Punish at: ${config[message.guild.id].roleCrLimits} <:emoji_33:798508517421744168> 
+**Anti Role-Delete**
+Enabled: ${config[message.guild.id].roleDelLimit} <:emoji_32:798508498605965333> 
+Warn at: ${config[message.guild.id].roleDelLimit} <:emoji_34:798508537718374401> 
+Punish at: ${config[message.guild.id].roleDelLimit} <:emoji_33:798508517421744168> 
+**Anti Channel-Create**
+Enabled:${config[message.guild.id].chaCrLimit} <:emoji_32:798508498605965333> 
+Warn at:${config[message.guild.id].chaCrLimit} <:emoji_34:798508537718374401> 
+Punish at:${config[message.guild.id].chaCrLimit} <:emoji_33:798508517421744168> 
+**Anti Channel-Delete**
+Enabled:${config[message.guild.id].chaDelLimit} <:emoji_32:798508498605965333> 
+Warn at:${config[message.guild.id].chaDelLimit} <:emoji_34:798508537718374401> 
+Punish at:${config[message.guild.id].chaDelLimit} <:emoji_33:798508517421744168>
+**Punishment:**
+Ban: <:emoji_33:798508517421744168>
+      
+      `);
+    message.channel.send({ embed });
+  }
+});
+///////////////////////////////////////////////////////////////////////////////
 let antibots = JSON.parse(fs.readFileSync("./antibots.json", "utf8"));
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
