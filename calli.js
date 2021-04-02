@@ -1285,11 +1285,11 @@ Punish at: ${config[message.guild.id].roleCrLimits} <:emoji_33:79850851742174416
 Enabled: ${config[message.guild.id].roleDelLimit} <:emoji_32:798508498605965333> 
 Warn at: ${config[message.guild.id].roleDelLimit} <:emoji_34:798508537718374401> 
 Punish at: ${config[message.guild.id].roleDelLimit} <:emoji_33:798508517421744168> 
+
 **Anti Channel-Create**
 Enabled:${config[message.guild.id].chaCrLimit} <:emoji_32:798508498605965333> 
 Warn at:${config[message.guild.id].chaCrLimit} <:emoji_34:798508537718374401> 
 Punish at:${config[message.guild.id].chaCrLimit} <:emoji_33:798508517421744168> 
-
 **Anti Channel-Delete**
 Enabled:${config[message.guild.id].chaDelLimit} <:emoji_32:798508498605965333> 
 Warn at:${config[message.guild.id].chaDelLimit} <:emoji_34:798508537718374401> 
