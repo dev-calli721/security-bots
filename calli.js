@@ -101,7 +101,7 @@ calli.on("message", async message => {
 \`${prefix}settings\`
 
 **Links**
-[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&scope=bot+applications.commands+identify+guilds+email&response_type=code&permissions=2080392378) - [Website](https://security-bot4415.glitch.me/)
+[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=2080392378&scope=bot) - [Website](https://security-bot4415.glitch.me/)
       
       
       `);
@@ -123,7 +123,7 @@ calli.on("message", async message => {
     let help = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setDescription(`
-<a:emoji_75:820381134868316181> [Click here](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=4294967288&scope=bot) **to invite the bot.**
+<a:emoji_75:820381134868316181> [Click here](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=2080392378&scope=bot) **to invite the bot.**
 `);
     message.channel.send(help);
   }
@@ -460,7 +460,7 @@ aprofessional moderation & security bot that can security your server
 **report a problem**
 If there is, you can always join the support server by type ${prefix}support. or DM a Developer. Developers you can message include Calli#8914
 **Extra Links**
-[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&scope=bot+applications.commands+identify+guilds+email&response_type=code&permissions=2080392378) - [Website](https://security-bot4415.glitch.me/)`);
+[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=2080392378&scope=bot) - [Website](https://security-bot4415.glitch.me/)`);
 
     message.channel.send(help);
   }
@@ -478,7 +478,7 @@ aprofessional moderation & security bot that can security your server
 **report a problem**
 If there is, you can always join the support server by type ${prefix}support. or DM a Developer. Developers you can message include Calli#8914
 **Extra Links**
-[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&scope=bot+applications.commands+identify+guilds+email&response_type=code&permissions=2080392378) - [Website](https://security-bot4415.glitch.me/)`);
+[Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=2080392378&scope=bot) - [Website](https://security-bot4415.glitch.me/)`);
 
   guild.owner.send(embed);
 });
