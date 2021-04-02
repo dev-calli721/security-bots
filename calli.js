@@ -492,6 +492,45 @@ calli.on("guildCreate", guild => {
   channel.send(embed);
 });
 ///////////////////////////////////////////////////////////////////////////////
+calli.on("message", message => {
+  if (message.content === prefix + "anti") {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
+    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+      return message.channel.send(
+        "**You must have a higher role use this command**"
+      );
+    let embed = new Discord.MessageEmbed()
+      .setColor(callicolor)
+      .setDescription(`
+**Security Number**
+\`${prefix}anti kick\`: **Number**
+\`${prefix}anti ban\`: **Number**
+\`${prefix}anti channelD\`: **Number**
+\`${prefix}anti channelC\`: **Number**
+\`${prefix}anti roleD\`: **Number**
+\`${prefix}anti roleC\`: **Number**
+
+**Security On/Off**
+\`${prefix}anti bot\`: **on-off**
+
+**Security**
+\`${prefix}settings\`
+
+
+      `)
+      .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }));
+    message.channel.send({ embed });
+  }
+});
+///////////////////////////////////////////////////////////////////////////////
 let anti = JSON.parse(fs.readFileSync("./antigreff.json", "UTF8"));
 let config = JSON.parse(fs.readFileSync("./configg.json", "UTF8"));
 calli.on("message", message => {
