@@ -598,7 +598,7 @@ calli.on("message", message => {
 
   if (message.content.startsWith(prefix + "anti")) {
   if (bot_owner.includes(message.id))
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
+    if (message.author.id !== message.guild.owner.user.id) {
       let anti = new Discord.MessageEmbed()
         .setDescription("You must have a higher role use this command")
         .setColor(callicolor);
