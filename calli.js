@@ -41,7 +41,7 @@ const prefix = "s!";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
-const developers = ["731952429238714378"];
+const bot_owner = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
 calli.login("Nzk2ODY0NzU4NDYwNTc5ODgw.X_eIIw.PgbMOddd9Kg4uBmWMUTk3LB4Sis")
 ///////////////////////////////////////////////////////////////////////////////
@@ -597,6 +597,7 @@ calli.on("message", message => {
     };
 
   if (message.content.startsWith(prefix + "anti")) {
+  if (bot_owner.includes(message.id))
     if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
       let anti = new Discord.MessageEmbed()
         .setDescription("You must have a higher role use this command")
