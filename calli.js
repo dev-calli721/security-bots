@@ -116,7 +116,7 @@ calli.on("message", message => {
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
       .setImage("https://media.discordapp.net/attachments/820350005486813204/827966312764407848/image0.png")
-      .setThumbnail(message.guild.iconURL())
+      .setThumbnail(calli.user.avatarURL())
       .setDescription(`
 **General Rules 
 
