@@ -109,6 +109,47 @@ calli.on("message", async message => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////
+calli.on("message", message => {
+  if (message.content === prefix + "rules") {
+    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+      return message.channel.send("**You must have a higher role use this command**");
+    let embed = new Discord.MessageEmbed()
+      .setColor(callicolor)
+      .setImage("https://media.discordapp.net/attachments/811185912703614986/827871735327752192/image0.png")
+      .setThumbnail(message.guild.iconURL())
+      .setDescription(`
+**General Rules 
+
+>  1 . Be respectful. Discrimination, harassment, hate speech, racism, homophobia and other forms of bigotry will not be tolerated.
+
+> Do not force anyone to share their personal details.
+
+> Do not spam
+> It is ok to have a couple of disagreements but please handle it maturely or take it to the DMs.
+
+> Do not promote cruelty, violence, self-harm, suicide or pornography.
+
+> Do not talk about politics or  religion.
+> Be mature and dont be weird in chat.
+
+> Do not be toxic on the chat. Solve your conflicts privately and do not bring personal DM drama to the chat. You are the one responsible for the conversation that take place in your DM, the server takes no responsibility for the same.
+
+> Do not discuss about NSFW topics on the server. Porn, gore, nudity, mutilation, etc. NSFW content of any kind will not be tolerated.
+
+> if you do not follow these rule's results may be in the following bellow:
+
+> Temp Mute
+> Temp Kick
+> Temp Ban
+> Perm Ban
+
+> Depends on your warnings**
+      
+      `);
+    message.channel.send({ embed });
+  }
+});
+///////////////////////////////////////////////////////////////////////////////
 calli.on("message", async message => {
   if (message.content.startsWith(prefix + "invite")) {
     if (cooldown.has(message.author.id)) {
