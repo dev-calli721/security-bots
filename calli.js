@@ -566,12 +566,12 @@ calli.on("message", message => {
     {
       let typeanum = new Discord.MessageEmbed()
 
-        .setDescription("" + callidisabled + "type a number")
+        .setDescription("type a number")
         .setColor(callicolor);
 
       {
         let onlyanum = new Discord.MessageEmbed()
-          .setDescription("" + callidisabled + "type a number")
+          .setDescription("type a number")
           .setColor(callicolor);
         ///////
         if (message.content.startsWith(prefix + "anti ban")) {
