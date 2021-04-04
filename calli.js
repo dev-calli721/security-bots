@@ -111,7 +111,7 @@ calli.on("message", async message => {
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content === prefix + "rules") {
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+    if (message.author.id !== message.guild.ownerID)
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
@@ -334,7 +334,7 @@ calli.on("message", message => {
     setTimeout(() => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+    if (message.author.id !== message.guild.ownerID)
       return message.channel.send(
         "**You must have a higher role use this command**"
       );
@@ -460,11 +460,11 @@ calli.on("message", message => {
   let commands = message.content.split(" ");
   if (commands[0] == prefix + "embed") {
     if (!message.guild) return;
-    if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES"))
-      return message.reply("**You Dont Have `MANAGE_MESSAGES` Permission .**");
+    if (message.author.id !== message.guild.ownerID)
+      return message.reply("** **You must have a higher role use this command****");
     if (!message.guild.member(calli.user).hasPermission("MANAGE_MESSAGES"))
       return message.reply(
-        "Please Check My Role Permission To `MANAGE_MESSAGES`"
+        "**You must have a higher role use this command**"
       );
     var args = message.content
       .split(" ")
@@ -544,7 +544,7 @@ calli.on("message", message => {
     setTimeout(() => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+    if (message.author.id !== message.guild.ownerID)
       return message.channel.send(
         "**You must have a higher role use this command**"
       );
@@ -597,7 +597,7 @@ calli.on("message", message => {
     };
 
   if (message.content.startsWith(prefix + "anti")) {
-      if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) {
+      if (message.author.id !== message.guild.ownerID) {
       let anti = new Discord.MessageEmbed()
         .setDescription("You must have a higher role use this command")
         .setColor(callicolor);
@@ -1300,7 +1300,7 @@ calli.on("message", message => {
     setTimeout(() => {
       cooldown.delete(message.author.id);
     }, cdtime * 1000);
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR"))
+    if (message.author.id !== message.guild.ownerID)
       return message.channel.send(
         "**You must have a higher role use this command**"
       );
@@ -1355,7 +1355,7 @@ Anti Bot Has been updated
 Enabled: ${callienabled}
 `)
     if (!message.channel.guild) return;
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
+    if (message.author.id !== message.guild.ownerID) return;
     antibots[message.guild.id] = {
       onoff: "On"
     };
@@ -1380,7 +1380,7 @@ Disabled: ${callidisabled}
 `
       )
     if (!message.channel.guild) return;
-    if (!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
+    if (message.author.id !== message.guild.ownerID) return;
     antibots[message.guild.id] = {
       onoff: "Off"
     };
