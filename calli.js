@@ -112,6 +112,15 @@ calli.on("message", async message => {
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content === prefix + "rules") {
+  if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
@@ -1350,6 +1359,15 @@ let antibots = JSON.parse(fs.readFileSync("./antibots.json", "utf8"));
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content.startsWith(prefix + "anti bot on")) {
+  if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
     let embed = new Discord.MessageEmbed()
     .setColor(callicolor)
     .setDescription(`
@@ -1373,6 +1391,15 @@ Enabled: ${callienabled}
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content.startsWith(prefix + "anti bot off")) {
+  if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
     let embed = new Discord.MessageEmbed()
     .setColor(callicolor)
           .setDescription(
@@ -1415,6 +1442,15 @@ fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content === prefix + "punishment") {
+  if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
@@ -1426,6 +1462,15 @@ calli.on("message", message => {
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content === prefix + "punishment ban") {
+  if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
@@ -1437,6 +1482,15 @@ calli.on("message", message => {
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", message => {
   if (message.content === prefix + "punishment kick") {
+  if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
     if (message.author.id !== message.guild.ownerID)
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
