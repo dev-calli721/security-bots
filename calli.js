@@ -116,7 +116,7 @@ calli.on("message", message => {
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setImage("https://media.discordapp.net/attachments/820350005486813204/827966312764407848/image0.png")
+      .setImage("https://media.discordapp.net/attachments/820350005486813204/828143477505523742/image0.png")
       .setThumbnail(calli.user.avatarURL())
       .setDescription(`
 **General Rules 
@@ -1308,6 +1308,7 @@ calli.on("message", message => {
     let embed = new Discord.MessageEmbed()
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }))
       .setColor(callicolor)
+      .setFooter("Security Settings", "https://media.discordapp.net/attachments/820350005486813204/828145421821804554/image0.png")
       .setDescription(`
       
 **Anti Ban**
