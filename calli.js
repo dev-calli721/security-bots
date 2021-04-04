@@ -99,6 +99,7 @@ calli.on("message", async message => {
 
 **Security**
 \`${prefix}settings\`
+\`${prefix}punishment\`
 
 **Links**
 [Support](https://discord.gg/2XfWseYDWJ) - [Invite](https://discord.com/oauth2/authorize?client_id=796864758460579880&permissions=2080392378&scope=bot) - [Website](https://security-bot4415.glitch.me/)
