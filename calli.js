@@ -1409,4 +1409,38 @@ fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
       console.error(err);
     });
 });
+
+///////////////////////////////////////////////////////////////////////////////
+calli.on("message", message => {
+  if (message.content === prefix + "punishment") {
+    if (message.author.id !== message.guild.ownerID)
+      return message.channel.send("**You must have a higher role use this command**");
+    let embed = new Discord.MessageEmbed()
+      .setColor(callicolor)
+      .setDescription(`Type a Punishment like **Kick** Or **Ban**`);
+    message.channel.send({ embed });
+  }
+});
+///////////////////////////////////////////////////////////////////////////////
+calli.on("message", message => {
+  if (message.content === prefix + "punishment ban") {
+    if (message.author.id !== message.guild.ownerID)
+      return message.channel.send("**You must have a higher role use this command**");
+    let embed = new Discord.MessageEmbed()
+      .setColor(callicolor)
+      .setDescription(`Punishment has update to ban`);
+    message.channel.send({ embed });
+  }
+});
+///////////////////////////////////////////////////////////////////////////////
+calli.on("message", message => {
+  if (message.content === prefix + "punishment kick") {
+    if (message.author.id !== message.guild.ownerID)
+      return message.channel.send("**You must have a higher role use this command**");
+    let embed = new Discord.MessageEmbed()
+      .setColor(callicolor)
+      .setDescription(`Punishment has update to kick`);
+    message.channel.send({ embed });
+  }
+});
 ///////////////////////////////////////////////////////////////////////////////
