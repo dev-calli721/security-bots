@@ -45,11 +45,13 @@ const bot_owner = ["731952429238714378"];
 ///////////////////////////////////////////////////////////////////////////////
 calli.login("Nzk2ODY0NzU4NDYwNTc5ODgw.X_eIIw.PgbMOddd9Kg4uBmWMUTk3LB4Sis")
 ///////////////////////////////////////////////////////////////////////////////
-const callienabled  = "<:emoji_32:798508498605965333>";
-const callidisabled = "<:emoji_31:798508482407039017>";
-const callifalse    = "<a:emoji_27:811585526913957894>";
-const callitrue     = "<a:emoji_26:809385634149826611>";
-const callicolor    = "BLUE";
+const callienabled  = "";
+const callidisabled = "";
+const callifalse    = "";
+const callitrue     = "";
+const callicolor    = "";
+const calliban      = "";
+const calliwarn     = "";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
@@ -634,10 +636,10 @@ calli.on("message", message => {
               .setColor(callicolor)
               .setDescription(
                 `
-Anti ban has been updated
-Enabled: ${config[message.guild.id].banLimit} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].banLimit} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168>
+Anti Ban has been updated
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].banLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].banLimit} ${calliban}
 `
               );
 
@@ -652,10 +654,12 @@ Punish at: <:emoji_33:798508517421744168>
           {
             let ban = new Discord.MessageEmbed().setColor(callicolor)
               .setDescription(`
-Anti kick has been updated
-Enabled: ${config[message.guild.id].kickLimits} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].kickLimits} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168> 
+
+Anti Kick has been updated
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].kickLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].kickLimit} ${calliban}
+
 `);
 
             message.channel.send(ban);
@@ -669,10 +673,10 @@ Punish at: <:emoji_33:798508517421744168>
           {
             let roled = new Discord.MessageEmbed().setColor(callicolor)
               .setDescription(`
-Anti role-delete has been updated
-Enabled: ${config[message.guild.id].roleDelLimit} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].roleDelLimit} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168>`);
+Anti Role-Delete has been updated
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].roleDelLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].banLimit} ${calliban} `);
 
             message.channel.send(roled);
            
@@ -685,10 +689,10 @@ Punish at: <:emoji_33:798508517421744168>`);
           {
             let rolec = new Discord.MessageEmbed().setColor(callicolor)
               .setDescription(`
-Anti role-create has been updated
-Enabled: ${config[message.guild.id].roleCrLimits} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].roleCrLimits} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168>`);
+Anti Role-Create has been updated
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].roleCrLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].roleCrLimit} ${calliban} `);
 
             message.channel.send(rolec);
            
@@ -701,10 +705,10 @@ Punish at: <:emoji_33:798508517421744168>`);
           {
             let ban = new Discord.MessageEmbed().setColor(callicolor)
               .setDescription(`
-Anti channel-delete has been updated
-Enabled: ${config[message.guild.id].chaDelLimit} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].chaDelLimit} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168>`);
+Anti Channel-Delete has been updated
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].chaDelLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].chaDelLimit} ${calliban} `);
 
             message.channel.send(ban);
            
@@ -717,10 +721,10 @@ Punish at: <:emoji_33:798508517421744168>`);
           {
             let ban = new Discord.MessageEmbed().setColor(callicolor)
               .setDescription(`
-Anti channel-create has been updated
-Enabled: ${config[message.guild.id].chaCrLimit} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].chaCrLimit} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168>`);
+Anti Channel-Create has been updated
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].chaCrLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].chaCrLimit} ${calliban} `);
 
             message.channel.send(ban);
            
@@ -735,9 +739,9 @@ Punish at: <:emoji_33:798508517421744168>`);
               .setColor(callicolor)
               .setDescription(`
 Anti Time has been updated
-Enabled: ${config[message.guild.id].time} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].time} <:emoji_34:798508537718374401> 
-Punish at: <:emoji_33:798508517421744168> `
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].time} ${calliwarn} 
+Punish at: ${config[message.guild.id].time} ${calliban} `
               );
 
             message.channel.send(ban);
@@ -806,7 +810,7 @@ calli.on("channelCreate", async channel => {
           let warncrchan = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban} 
 have punished a user, details:
 **Server:**
 ${channel.guild.name}
@@ -883,7 +887,7 @@ calli.on("channelDelete", async channel => {
           let warndelchan = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban}
 have punished a user, details:
 **Server:**
 ${channel.guild.name}
@@ -960,7 +964,7 @@ calli.on("roleDelete", async channel => {
           let warndelrole = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban}
 have punished a user, details:
 **Server:**
 ${channel.guild.name}
@@ -1037,7 +1041,7 @@ calli.on("roleCreate", async channel => {
           let warncrrole = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban} 
 have punished a user, details:
 **Server:**
 ${channel.guild.name}
@@ -1111,7 +1115,7 @@ calli.on("guildBanAdd", async (guild, user) => {
           let warnban1 = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban}
 have punished a user, details:
 **Server:**
 ${guild.guild.name}
@@ -1185,7 +1189,7 @@ calli.on("guildKickAdd", async (guild, user) => {
           let warnkick1 = new Discord.MessageEmbed()
             .setColor(callicolor)
             .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban} 
 have punished a user, details:
 **Server:**
 ${guild.guild.name}
@@ -1264,7 +1268,7 @@ calli.on("guildMemberRemove", async member => {
             let warnban2 = new Discord.MessageEmbed()
               .setColor(callicolor)
               .setFooter(`security`).setDescription(`
-**User Punished** <:emoji_33:798508517421744168> 
+**User Punished** ${calliban}
 have punished a user, details:
 **Server:**
 ${guild.guild.name}
@@ -1321,34 +1325,37 @@ calli.on("message", message => {
       .setDescription(`
       
 **Anti Ban**
-Enabled:${config[message.guild.id].banLimit} <:emoji_32:798508498605965333> 
-Warn at:${config[message.guild.id].banLimit} <:emoji_34:798508537718374401> 
-Punish at:${config[message.guild.id].banLimit} <:emoji_33:798508517421744168> 
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].banLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].banLimit} ${calliban}
 **Anti Kick**
-Enabled:${config[message.guild.id].kickLimits} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].kickLimits} <:emoji_34:798508537718374401> 
-Punish at: ${config[message.guild.id].kickLimits} <:emoji_33:798508517421744168> 
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].kickLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].kickLimit} ${calliban}
+
 
 **Anti Role-Create**
-Enabled: ${config[message.guild.id].roleCrLimits} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].roleCrLimits} <:emoji_34:798508537718374401> 
-Punish at: ${config[message.guild.id].roleCrLimits} <:emoji_33:798508517421744168> 
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].roleCrLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].roleCLimit} ${calliban}
 **Anti Role-Delete**
-Enabled: ${config[message.guild.id].roleDelLimit} <:emoji_32:798508498605965333> 
-Warn at: ${config[message.guild.id].roleDelLimit} <:emoji_34:798508537718374401> 
-Punish at: ${config[message.guild.id].roleDelLimit} <:emoji_33:798508517421744168> 
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].roleDelLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].roleDelLimit} ${calliban}
+
 
 **Anti Channel-Create**
-Enabled:${config[message.guild.id].chaCrLimit} <:emoji_32:798508498605965333> 
-Warn at:${config[message.guild.id].chaCrLimit} <:emoji_34:798508537718374401> 
-Punish at:${config[message.guild.id].chaCrLimit} <:emoji_33:798508517421744168> 
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].chaCrLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].chaCrLimit} ${calliban}
 **Anti Channel-Delete**
-Enabled:${config[message.guild.id].chaDelLimit} <:emoji_32:798508498605965333> 
-Warn at:${config[message.guild.id].chaDelLimit} <:emoji_34:798508537718374401> 
-Punish at:${config[message.guild.id].chaDelLimit} <:emoji_33:798508517421744168>
+Enabled: ${callienabled}
+Warn at: ${config[message.guild.id].chaDelLimit} ${calliwarn} 
+Punish at: ${config[message.guild.id].chaDelLimit} ${calliban}
+
 
 **Punishment:**
-Ban: <:emoji_33:798508517421744168>
+Ban: ${calliban}
       
       `);
     message.channel.send({ embed });
