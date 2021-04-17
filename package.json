@@ -5,9 +5,9 @@
   "name": "hello-express",
   "version": "4.0.0",
   "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "calli.js",
+  "main": "Mrcj.js",
   "scripts": {
-    "start": "node calli.js"
+    "start": "node Mrcj.js"
   },
   "dependencies": {
     "express": "^4.17.1",
