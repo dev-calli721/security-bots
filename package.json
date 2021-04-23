@@ -3,7 +3,7 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "hello-express",
-  "version": "4.0.0",
+  "version": "2.0.0",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "Mrcj.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "fs-extra": "^9.0.1"
   },
   "engines": {
-    "node": "14.x"
+    "node": "12.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
