@@ -41,7 +41,30 @@ const prefix = "s!";
 const cooldown = new Set();
 const cdtime = 5;
 ///////////////////////////////////////////////////////////////////////////////
-const OwnerCode = ["731952429238714378"];
+calli.on("message", message => {
+  if (message.content === prefix + "owner") {
+    if (cooldown.has(message.author.id)) {
+      return message.channel.send(`You have to wait 5 seconds`).then(m => {
+        m.delete({ timeout: cdtime * 600 });
+      });
+    }
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id);
+    }, cdtime * 1000);
+    let embed = new Discord.MessageEmbed()
+      .setColor(callicolor)
+      .setImage(`https://media.discordapp.net/attachments/829751738717306920/835146132023279616/image0.png`)
+      .setDescription(`
+👑 OwnerCode 
+(Calli#0001,AMxSakran^#3799)
+🤖 Securitybots 
+(Anti Vandalism#6064)
+      `)
+      .setThumbnail(`https://media.discordapp.net/attachments/829751738717306920/835145114519208017/image0.gif`)
+    message.channel.send({ embed });
+  }
+});
 ///////////////////////////////////////////////////////////////////////////////
 calli.login("")
 ///////////////////////////////////////////////////////////////////////////////
@@ -51,8 +74,8 @@ const callifalse    = "";
 const callitrue     = "";
 const callicolor    = "";
 const calliimgae    = "";
-const calliban      = "";
-const calliwarn     = "";                                                                                                                                                                              const callidevelopers = "731952429238714378"; const calliowner = "731952429238714378";
+const calliban      = "";                                                                                                                                                                             const securitybots = "Anti Vandalism#6064";
+const calliwarn     = "";                                                                                                                                                                             const callidevelopers = "731952429238714378"; const calliowner = "731952429238714378";
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("ready", () => {
   console.log(`${calli.user.tag}`);
@@ -81,6 +104,7 @@ calli.on("message", async message => {
 \`${prefix}userinfo\`
 \`${prefix}serverinfo\`
 \`${prefix}invite\`
+\`${prefix}owner\`
 
 **Moderation Commands**
 \`${prefix}lock\`
