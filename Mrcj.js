@@ -657,8 +657,8 @@ Punish at: ${config[message.guild.id].banLimit} ${calliban}
 
 Anti Kick has been updated
 Enabled: ${callienabled}
-Warn at: ${config[message.guild.id].kickLimit} ${calliwarn} 
-Punish at: ${config[message.guild.id].kickLimit} ${calliban}
+Warn at: ${config[message.guild.id].kickLimits} ${calliwarn} 
+Punish at: ${config[message.guild.id].kickLimits} ${calliban}
 
 `);
 
@@ -676,7 +676,7 @@ Punish at: ${config[message.guild.id].kickLimit} ${calliban}
 Anti Role-Delete has been updated
 Enabled: ${callienabled}
 Warn at: ${config[message.guild.id].roleDelLimit} ${calliwarn} 
-Punish at: ${config[message.guild.id].banLimit} ${calliban} `);
+Punish at: ${config[message.guild.id].roleDelLimit} ${calliban} `);
 
             message.channel.send(roled);
            
@@ -691,8 +691,8 @@ Punish at: ${config[message.guild.id].banLimit} ${calliban} `);
               .setDescription(`
 Anti Role-Create has been updated
 Enabled: ${callienabled}
-Warn at: ${config[message.guild.id].roleCrLimit} ${calliwarn} 
-Punish at: ${config[message.guild.id].roleCrLimit} ${calliban} `);
+Warn at: ${config[message.guild.id].roleCrLimits} ${calliwarn} 
+Punish at: ${config[message.guild.id].roleCrLimits} ${calliban} `);
 
             message.channel.send(rolec);
            
@@ -1330,14 +1330,14 @@ Warn at: ${config[message.guild.id].banLimit} ${calliwarn}
 Punish at: ${config[message.guild.id].banLimit} ${calliban}
 **Anti Kick**
 Enabled: ${callienabled}
-Warn at: ${config[message.guild.id].kickLimit} ${calliwarn} 
-Punish at: ${config[message.guild.id].kickLimit} ${calliban}
+Warn at: ${config[message.guild.id].kickLimits} ${calliwarn} 
+Punish at: ${config[message.guild.id].kickLimits} ${calliban}
 
 
 **Anti Role-Create**
 Enabled: ${callienabled}
-Warn at: ${config[message.guild.id].roleCrLimit} ${calliwarn} 
-Punish at: ${config[message.guild.id].roleCLimit} ${calliban}
+Warn at: ${config[message.guild.id].roleCrLimits} ${calliwarn} 
+Punish at: ${config[message.guild.id].roleCrLimits} ${calliban}
 **Anti Role-Delete**
 Enabled: ${callienabled}
 Warn at: ${config[message.guild.id].roleDelLimit} ${calliwarn} 
