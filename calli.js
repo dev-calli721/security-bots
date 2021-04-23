@@ -1308,7 +1308,7 @@ calli.on("message", message => {
     let embed = new Discord.MessageEmbed()
       .setThumbnail(message.member.user.displayAvatarURL({ dynamic: true }))
       .setColor(callicolor)
-      .setAuthor("Security Settings", "https://media.discordapp.net/attachments/820350005486813204/828145421821804554/image0.png")
+      .setAuthor("Security Settings", "")
       .setDescription(`
       
 **Anti Ban**
