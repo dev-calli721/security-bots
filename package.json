@@ -4,10 +4,10 @@
   "//3": "updating this file will download and update your packages",
   "name": "hello-express",
   "version": "2.0.0",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "Mrcj.js",
+  "description": "Calli Is One",
+  "main": "calli.js",
   "scripts": {
-    "start": "node Mrcj.js"
+    "start": "node calli.js"
   },
   "dependencies": {
     "express": "^4.17.1",
