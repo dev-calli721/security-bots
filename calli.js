@@ -152,7 +152,7 @@ calli.on("message", message => {
       return message.channel.send("**You must have a higher role use this command**");
     let embed = new Discord.MessageEmbed()
       .setColor(callicolor)
-      .setImage("https://media.discordapp.net/attachments/811185912703614986/828148114623823872/image0.png")
+      .setImage(`callilogo`)
       .setThumbnail(calli.user.avatarURL())
       .setDescription(`
 **General Rules 
