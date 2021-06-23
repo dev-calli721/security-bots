@@ -83,6 +83,7 @@ calli.on("ready", () => {
     Type: "Playing"
   });
 });
+
 ///////////////////////////////////////////////////////////////////////////////
 calli.on("message", async message => {
   if (message.content.startsWith(prefix + "help")) {
